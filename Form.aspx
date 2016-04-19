@@ -170,11 +170,11 @@
             <!-- Buttons -->
             <div class="row">
                 <!-- Submit button -->
-                <div id="SubmitButton" class="input-field col s1">
+                <div id="SubmitButton" class="input-field col m1 s5">
                     <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn waves-effect waves-light" type="submit" name="action" OnClick="btnSubmit_Click" ValidationGroup="form1" />
                 </div>
                 <!-- Clear button -->
-                <div id="ClearButton" class="input-field col s1 offset-s1">
+                <div id="ClearButton" class="input-field col s5 offset-s1 m1 offset-m1">
                     <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="btn waves-effect waves-light red" type="button" name="clear" OnClick="btnClear_Click" />
                 </div>
             </div>
