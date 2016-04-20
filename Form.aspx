@@ -9,15 +9,17 @@
     <!--Google Icon Font-->
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--materialize.css-->
-    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css" media="screen,projection" />
 
     <style>
         #wrapper {
             margin: 50px auto;
         }
+
         #validSummary {
             padding: 20px 0;
         }
+
         #msgDiv > div {
             padding: 20px 10px !important;
         }
@@ -55,7 +57,7 @@
         }
     </script>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 <body>
 
@@ -72,18 +74,22 @@
             <!-- Message Summary -->
             <% if (lblMessage.Text != "")
                 { %>
-                <div id="msgDiv" class="row">
-                    <div class="col s12 green card-panel">
-                        <asp:Label ID="lblMessage" runat="server" Text="" Display="Dynamic"></asp:Label>
-                    </div>
+            <div id="msgDiv" class="row">
+                <div class="col s12 green card-panel">
+                    <asp:Label ID="lblMessage" runat="server"
+                        Text=""
+                        Display="Dynamic"></asp:Label>
                 </div>
-                <meta http-equiv="refresh" content="5"/>
+            </div>
+            <meta http-equiv="refresh" content="5" />
             <% }; %>
 
             <!-- Validation Summary -->
             <div id="vldSumDiv" class="row">
                 <div class="col s12 red card-panel">
-                    <asp:ValidationSummary ID="validSummary" runat="server" HeaderText="The following errors occurred:" ValidationGroup="form1" />
+                    <asp:ValidationSummary ID="validSummary" runat="server"
+                        HeaderText="The following errors occurred:"
+                        ValidationGroup="form1" />
                 </div>
             </div>
 
@@ -92,24 +98,51 @@
                 <!-- First Name -->
                 <div class="input-field col s6">
                     <asp:TextBox ID="txtFirstName" runat="server" Length="30" CssClass="validate"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="reqFirstName" CssClass="red-text" runat="server" ErrorMessage="First name can't be blank." ControlToValidate="txtFirstName" Display="Dynamic" ValidationGroup="form1"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="regexFirstName" CssClass="red-text" runat="server" ErrorMessage="Enter a valid string" ValidationExpression="[A-Za-z]+(['][A-Za-z]+)*" ControlToValidate="txtFirstName" Display="Dynamic" ValidationGroup="form1"></asp:RegularExpressionValidator>
+                    <asp:RequiredFieldValidator ID="reqFirstName" CssClass="red-text" runat="server"
+                        ErrorMessage="First name can't be blank."
+                        ControlToValidate="txtFirstName"
+                        Display="Dynamic"
+                        ValidationGroup="form1"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="regexFirstName" CssClass="red-text" runat="server"
+                        ErrorMessage="Enter a valid string"
+                        ValidationExpression="[A-Za-z]+(['][A-Za-z]+)*"
+                        ControlToValidate="txtFirstName"
+                        Display="Dynamic"
+                        ValidationGroup="form1"></asp:RegularExpressionValidator>
                     <label for="first_name">* First Name</label>
                 </div>
                 <!-- Last Name -->
                 <div class="input-field col s6">
                     <asp:TextBox ID="txtLastName" runat="server" Length="30" CssClass="validate"></asp:TextBox>
                     <label for="last_name">* Last Name</label>
-                    <asp:RequiredFieldValidator ID="reqLastName" CssClass="red-text" runat="server" ErrorMessage="Last name can't be blank." ControlToValidate="txtLastName" Display="Dynamic" ValidationGroup="form1"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="regexLastName" CssClass="red-text" runat="server" ErrorMessage="Enter a valid string" ValidationExpression="[A-Za-z]+(['][A-Za-z]+)*" ControlToValidate="txtLastName" Display="Dynamic" ValidationGroup="form1"></asp:RegularExpressionValidator>
+                    <asp:RequiredFieldValidator ID="reqLastName" CssClass="red-text" runat="server"
+                        ErrorMessage="Last name can't be blank."
+                        ControlToValidate="txtLastName"
+                        Display="Dynamic"
+                        ValidationGroup="form1"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="regexLastName" CssClass="red-text" runat="server"
+                        ErrorMessage="Enter a valid string"
+                        ValidationExpression="[A-Za-z]+(['][A-Za-z]+)*"
+                        ControlToValidate="txtLastName"
+                        Display="Dynamic"
+                        ValidationGroup="form1"></asp:RegularExpressionValidator>
                 </div>
             </div>
             <!-- Email Address -->
             <div class="row">
                 <div class="input-field col s12">
                     <asp:TextBox ID="txtEmail" runat="server" type="email" CssClass="validate" Length="75"></asp:TextBox>
-                    <asp:RequiredFieldValidator ID="reqEmail" CssClass="red-text" runat="server" ErrorMessage="Email address can't be blank." ControlToValidate="txtEmail" Display="Dynamic" ValidationGroup="form1"></asp:RequiredFieldValidator>
-                    <asp:RegularExpressionValidator ID="regexEmail" CssClass="red-text" runat="server" ErrorMessage="Enter a valid email address" ControlToValidate="txtEmail" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*" Display="Dynamic" ValidationGroup="form1"></asp:RegularExpressionValidator>
+                    <asp:RequiredFieldValidator ID="reqEmail" CssClass="red-text" runat="server"
+                        ErrorMessage="Email address can't be blank."
+                        ControlToValidate="txtEmail"
+                        Display="Dynamic"
+                        ValidationGroup="form1"></asp:RequiredFieldValidator>
+                    <asp:RegularExpressionValidator ID="regexEmail" CssClass="red-text" runat="server"
+                        ErrorMessage="Enter a valid email address"
+                        ControlToValidate="txtEmail"
+                        ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
+                        Display="Dynamic"
+                        ValidationGroup="form1"></asp:RegularExpressionValidator>
                     <label for="txtEmail">* Email</label>
                 </div>
             </div>
@@ -118,7 +151,11 @@
                 <div class="input-field col s12">
                     <asp:TextBox ID="txtPassword" runat="server" CssClass="validate" Length="32" type="password"></asp:TextBox>
                     <label for="password">* Password</label>
-                    <asp:RequiredFieldValidator ID="reqPassword" CssClass="red-text" runat="server" ErrorMessage="Password can't be blank." ControlToValidate="txtPassword" Display="Dynamic" ValidationGroup="form1"></asp:RequiredFieldValidator>
+                    <asp:RequiredFieldValidator ID="reqPassword" CssClass="red-text" runat="server"
+                        ErrorMessage="Password can't be blank."
+                        ControlToValidate="txtPassword"
+                        Display="Dynamic"
+                        ValidationGroup="form1"></asp:RequiredFieldValidator>
                 </div>
             </div>
             <!-- Confirm Password -->
@@ -126,8 +163,17 @@
                 <div class="input-field col s12">
                     <asp:TextBox ID="txtPassword2" runat="server" CssClass="validate" Length="32" type="password"></asp:TextBox>
                     <label for="password2">* Confirm Password</label>
-                    <asp:RequiredFieldValidator ID="reqPassword2" CssClass="red-text" runat="server" ErrorMessage="Confirmation password can't be blank." ControlToValidate="txtPassword2" Display="Dynamic" ValidationGroup="form1"></asp:RequiredFieldValidator>
-                    <asp:CompareValidator ID="cmpPasswords" CssClass="red-text" runat="server" ErrorMessage="Confirmation password doesn't match original password." Display="Dynamic" ControlToCompare="txtPassword" ControlToValidate="txtPassword2" ValidationGroup="form1"></asp:CompareValidator>
+                    <asp:RequiredFieldValidator ID="reqPassword2" CssClass="red-text" runat="server"
+                        ErrorMessage="Confirmation password can't be blank."
+                        ControlToValidate="txtPassword2"
+                        Display="Dynamic"
+                        ValidationGroup="form1"></asp:RequiredFieldValidator>
+                    <asp:CompareValidator ID="cmpPasswords" CssClass="red-text" runat="server"
+                        ErrorMessage="Confirmation password doesn't match original password."
+                        Display="Dynamic"
+                        ControlToCompare="txtPassword"
+                        ControlToValidate="txtPassword2"
+                        ValidationGroup="form1"></asp:CompareValidator>
                 </div>
             </div>
             <!-- Phone / Age -->
@@ -135,13 +181,22 @@
                 <!-- Phone Number -->
                 <div class="input-field col s6">
                     <asp:TextBox ID="txtPhone" runat="server" CssClass="validate" type="text" Length="14" MaxLength="14"></asp:TextBox>
-                    <asp:RegularExpressionValidator ID="regexPhone" CssClass="red-text" runat="server" ErrorMessage="Enter a valid phone number (###) ###-####" ControlToValidate="txtPhone" ValidationExpression="[(][0-9]{3}[)]\s[0-9]{3}[-][0-9]{4}"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="regexPhone" CssClass="red-text" runat="server"
+                        ErrorMessage="Enter a valid phone number (###) ###-####"
+                        ControlToValidate="txtPhone"
+                        ValidationExpression="[(][0-9]{3}[)]\s[0-9]{3}[-][0-9]{4}"></asp:RegularExpressionValidator>
                     <label for="txtPhone">Cell Phone Number</label>
                 </div>
                 <!-- Age -->
                 <div class="input-field col s6">
                     <asp:TextBox ID="txtAge" runat="server" CssClass="validate" type="number" Length="3"></asp:TextBox>
-                    <asp:RangeValidator ID="rngAge" CssClass="red-text" runat="server" ErrorMessage="Enter an age between 1 and 120." ControlToValidate="txtAge" MaximumValue="120" MinimumValue="1" Type="Integer" ValidationGroup="form1"></asp:RangeValidator>
+                    <asp:RangeValidator ID="rngAge" CssClass="red-text" runat="server"
+                        ErrorMessage="Enter an age between 1 and 120."
+                        ControlToValidate="txtAge"
+                        MaximumValue="120"
+                        MinimumValue="1"
+                        Type="Integer"
+                        ValidationGroup="form1"></asp:RangeValidator>
                     <label for="txtAge">Age</label>
                 </div>
             </div>
@@ -149,7 +204,12 @@
             <div class="row">
                 <div class="input-field col s12">
                     <asp:TextBox ID="txtDate" runat="server" CssClass="datepicker" type="date" placeholder="Pick a Date"></asp:TextBox>
-                    <asp:RegularExpressionValidator ID="regexDate" CssClass="red-text" runat="server" ErrorMessage="Select a valid date from the datepicker." ControlToValidate="txtDate" Display="Dynamic" ValidationExpression="[0-9][0-9]?\s[A-Za-z]+[,]+\s[0-9]{4}" ValidationGroup="form1"></asp:RegularExpressionValidator>
+                    <asp:RegularExpressionValidator ID="regexDate" CssClass="red-text" runat="server"
+                        ErrorMessage="Select a valid date from the datepicker."
+                        ControlToValidate="txtDate"
+                        Display="Dynamic"
+                        ValidationExpression="[0-9][0-9]?\s[A-Za-z]+[,]+\s[0-9]{4}"
+                        ValidationGroup="form1"></asp:RegularExpressionValidator>
                     <label class="active" for="txtDate">Date</label>
                 </div>
             </div>
@@ -164,18 +224,32 @@
                     <div class="file-path-wrapper">
                         <asp:TextBox ID="txtFilePath" runat="server" CssClass="file-path" Type="text"></asp:TextBox>
                     </div>
-                    <asp:CustomValidator ID="cValidFileAvatar" CssClass="red-text" runat="server" ErrorMessage="Only files of type .jpg, .jpeg, .png, and .gif are acceptable." ClientValidationFunction="ValidateFileUpload" ControlToValidate="fileAvatar" OnServerValidate="cValidAvatarFile_ServerValidate" Display="Dynamic" ValidationGroup="form1"></asp:CustomValidator>
+                    <asp:CustomValidator ID="cValidFileAvatar" CssClass="red-text" runat="server"
+                        ErrorMessage="Only files of type .jpg, .jpeg, .png, and .gif are acceptable."
+                        ClientValidationFunction="ValidateFileUpload"
+                        ControlToValidate="fileAvatar"
+                        OnServerValidate="cValidAvatarFile_ServerValidate"
+                        Display="Dynamic"
+                        ValidationGroup="form1"></asp:CustomValidator>
                 </div>
             </div>
             <!-- Buttons -->
             <div class="row">
                 <!-- Submit button -->
                 <div id="SubmitButton" class="input-field col m1 s5">
-                    <asp:Button ID="btnSubmit" runat="server" Text="Submit" CssClass="btn waves-effect waves-light" type="submit" name="action" OnClick="btnSubmit_Click" ValidationGroup="form1" />
+                    <asp:Button ID="btnSubmit" Text="Submit" CssClass="btn waves-effect waves-light" runat="server"
+                        type="submit"
+                        name="action"
+                        OnClick="btnSubmit_Click"
+                        ValidationGroup="form1" />
                 </div>
                 <!-- Clear button -->
                 <div id="ClearButton" class="input-field col s5 offset-s1 m1 offset-m1">
-                    <asp:Button ID="btnClear" runat="server" Text="Clear" CssClass="btn waves-effect waves-light red" type="button" name="clear" OnClick="btnClear_Click" />
+                    <asp:Button ID="btnClear" CssClass="btn waves-effect waves-light red" runat="server"
+                        Text="Clear"
+                        type="button"
+                        name="clear"
+                        OnClick="btnClear_Click" />
                 </div>
             </div>
         </form>
